@@ -1,0 +1,19 @@
+select.form-control {
+    color: #000;
+}
+.modal.fade.show {
+    overflow-y: scroll;
+}
+.sticky-header-container.fix-sticky.fixed-table-container {
+    top: 60px !important;
+}
+i.spinner-border.spinner-border-sm {
+    vertical-align: top;
+}
+form.tp-search {
+    min-height: 127px;
+}
+
+form.tp-search .form-group span.selection .select2-selection__rendered {
+    width: 100%;
+}
