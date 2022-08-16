@@ -103,6 +103,7 @@ define('CONTACT_FORM_TABLE','tbl_contact_form');
 define('DEPARTMENT_TABLE','tbl_department');
 define('INQUIRY_TABLE','tbl_inquiry');
 define('TRANSLATIONS_TABLE','tbl_translations');
+define('TABLE_PROJECT','tbl_project');
 
 //Admin email
 define('ADMIN_EMAIL','provider.nexus@gmail.com');
