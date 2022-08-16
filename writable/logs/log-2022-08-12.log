@@ -1,0 +1,536 @@
+CRITICAL - 2022-08-12 12:16:03 --> Undefined variable $storyline_order
+in APPPATH\Modules\Storyline\Views\edit.php on line 231.
+ 1 APPPATH\Modules\Storyline\Views\edit.php(231): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $storyline_order', 'APPPATH\\Modules\\Storyline\\Views\\edit.php', 231)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Modules\\Storyline\\Views\\edit.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Storyline\\Views/edit', [], true)
+ 5 APPPATH\Modules\Storyline\Controllers\AdminController.php(329): view('\\Modules\\Storyline\\Views/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Storyline\Controllers\AdminController->edit('19')
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Storyline\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 15:59:05 --> syntax error, unexpected token "endif", expecting end of file
+in APPPATH\Views\admin\layout\master.php on line 309.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('admin/layout/master', [], true)
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Dashboard\\Views\\index', [], true)
+ 4 APPPATH\Modules\Dashboard\Controllers\AdminController.php(60): view('\\Modules\\Dashboard\\Views\\index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): Modules\Dashboard\Controllers\AdminController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 15:59:27 --> syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+in APPPATH\Views\admin\layout\master.php on line 482.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('admin/layout/master', [], true)
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Dashboard\\Views\\index', [], true)
+ 4 APPPATH\Modules\Dashboard\Controllers\AdminController.php(60): view('\\Modules\\Dashboard\\Views\\index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): Modules\Dashboard\Controllers\AdminController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 15:59:29 --> syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+in APPPATH\Views\admin\layout\master.php on line 482.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('admin/layout/master', [], true)
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Dashboard\\Views\\index', [], true)
+ 4 APPPATH\Modules\Dashboard\Controllers\AdminController.php(60): view('\\Modules\\Dashboard\\Views\\index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): Modules\Dashboard\Controllers\AdminController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 15:59:29 --> syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+in APPPATH\Views\admin\layout\master.php on line 482.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('admin/layout/master', [], true)
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Dashboard\\Views\\index', [], true)
+ 4 APPPATH\Modules\Dashboard\Controllers\AdminController.php(60): view('\\Modules\\Dashboard\\Views\\index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): Modules\Dashboard\Controllers\AdminController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 15:59:29 --> syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+in APPPATH\Views\admin\layout\master.php on line 482.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('admin/layout/master', [], true)
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Dashboard\\Views\\index', [], true)
+ 4 APPPATH\Modules\Dashboard\Controllers\AdminController.php(60): view('\\Modules\\Dashboard\\Views\\index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): Modules\Dashboard\Controllers\AdminController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-08-12 16:13:49 --> Table 'dummy.tbl_department' doesn't exist
+CRITICAL - 2022-08-12 16:13:49 --> Table 'dummy.tbl_department' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`', [], false)
+ 5 APPPATH\Models\Common.php(297): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Modules\Department\Controllers\AdminController.php(32): App\Models\Common->GetTotalCount('tbl_department', 'C:\\xampp\\htdocs\\dummyproject')
+ 7 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-08-12 16:14:34 --> Table 'dummy.tbl_department' doesn't exist
+CRITICAL - 2022-08-12 16:14:34 --> Table 'dummy.tbl_department' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`', [], false)
+ 5 APPPATH\Models\Common.php(297): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Modules\Department\Controllers\AdminController.php(32): App\Models\Common->GetTotalCount('tbl_department', 'C:\\xampp\\htdocs\\dummyproject')
+ 7 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-08-12 16:14:39 --> Table 'dummy.tbl_department' doesn't exist
+CRITICAL - 2022-08-12 16:14:39 --> Table 'dummy.tbl_department' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`', [], false)
+ 5 APPPATH\Models\Common.php(297): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Modules\Department\Controllers\AdminController.php(32): App\Models\Common->GetTotalCount('tbl_department', 'C:\\xampp\\htdocs\\dummyproject')
+ 7 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-08-12 16:15:47 --> Table 'dummy.tbl_department' doesn't exist
+CRITICAL - 2022-08-12 16:15:47 --> Table 'dummy.tbl_department' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`', [], false)
+ 5 APPPATH\Models\Common.php(297): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Modules\Department\Controllers\AdminController.php(31): App\Models\Common->GetTotalCount('tbl_department', 'C:\\xampp\\htdocs\\dummyproject')
+ 7 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-08-12 16:16:19 --> Table 'dummy.tbl_department' doesn't exist
+CRITICAL - 2022-08-12 16:16:19 --> Table 'dummy.tbl_department' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_department`', [], false)
+ 5 APPPATH\Models\Common.php(297): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Modules\Department\Controllers\AdminController.php(31): App\Models\Common->GetTotalCount('tbl_department', 'C:\\xampp\\htdocs\\dummyproject')
+ 7 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:17:43 --> Undefined variable $permissions
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 51.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $permissions', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 51)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:17:56 --> Undefined variable $permissions
+in APPPATH\Modules\Department\Views\index.php on line 83.
+ 1 APPPATH\Modules\Department\Views\index.php(83): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $permissions', 'APPPATH\\Modules\\Department\\Views\\index.php', 83)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Modules\\Department\\Views\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Department\\Views\\index', [], true)
+ 5 APPPATH\Modules\Department\Controllers\AdminController.php(53): view('\\Modules\\Department\\Views\\index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:19:27 --> Undefined constant "STORYLINE_TABLE"
+in APPPATH\Modules\Department\Views\index.php on line 89.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Department\\Views\\index', [], true)
+ 4 APPPATH\Modules\Department\Controllers\AdminController.php(53): view('\\Modules\\Department\\Views\\index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:21:34 --> Undefined array key "adventure_id"
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 316.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "adventure_id"', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 316)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->edit('30')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:22:34 --> Undefined array key "adventure_id"
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 316.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "adventure_id"', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 316)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->edit('30')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:22:34 --> Undefined array key "adventure_id"
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 316.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "adventure_id"', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 316)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->edit('30')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:22:35 --> Undefined array key "adventure_id"
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 316.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "adventure_id"', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 316)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->edit('30')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:23:15 --> Undefined array key "adventure_id"
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 316.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "adventure_id"', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 316)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->edit('30')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:23:16 --> Undefined array key "adventure_id"
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 316.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "adventure_id"', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 316)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->edit('30')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:23:16 --> Undefined array key "adventure_id"
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 316.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "adventure_id"', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 316)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->edit('30')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:23:16 --> Undefined array key "adventure_id"
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 316.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "adventure_id"', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 316)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->edit('30')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:23:17 --> Undefined array key "adventure_id"
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 316.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "adventure_id"', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 316)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->edit('30')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:23:17 --> Undefined array key "adventure_id"
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 316.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "adventure_id"', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 316)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->edit('30')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:23:17 --> Undefined array key "adventure_id"
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 316.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "adventure_id"', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 316)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->edit('30')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:23:47 --> Undefined variable $challenge_id
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 322.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(322): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $challenge_id', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 322)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->edit('30')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:23:47 --> Undefined variable $challenge_id
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 322.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(322): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $challenge_id', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 322)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->edit('30')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:26:41 --> Unclosed '{' on line 284 does not match ')'
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 285.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(261): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Modules\\Department\\Controllers\\AdminController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(239): CodeIgniter\Autoloader\Autoloader->loadInNamespace('Modules\\Department\\Controllers\\AdminController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('Modules\\Department\\Controllers\\AdminController')
+ 4 SYSTEMPATH\CodeIgniter.php(846): class_exists('\\Modules\\Department\\Controllers\\AdminController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(453): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:30:34 --> syntax error, unexpected token ";", expecting "]"
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 137.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(261): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Modules\\Department\\Controllers\\AdminController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(239): CodeIgniter\Autoloader\Autoloader->loadInNamespace('Modules\\Department\\Controllers\\AdminController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('Modules\\Department\\Controllers\\AdminController')
+ 4 SYSTEMPATH\CodeIgniter.php(846): class_exists('\\Modules\\Department\\Controllers\\AdminController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(453): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:31:07 --> Undefined constant "Modules\Department\Controllers\STORYLINE_TABLE"
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 154.
+ 1 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->add()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:31:27 --> Undefined variable $permissions
+in APPPATH\Modules\Department\Controllers\AdminController.php on line 162.
+ 1 APPPATH\Modules\Department\Controllers\AdminController.php(162): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $permissions', 'APPPATH\\Modules\\Department\\Controllers\\AdminController.php', 162)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->add()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:31:36 --> Undefined variable $adventure_id
+in APPPATH\Modules\Department\Views\add.php on line 199.
+ 1 APPPATH\Modules\Department\Views\add.php(199): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $adventure_id', 'APPPATH\\Modules\\Department\\Views\\add.php', 199)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Modules\\Department\\Views\\add.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Department\\Views/add', [], true)
+ 5 APPPATH\Modules\Department\Controllers\AdminController.php(163): view('\\Modules\\Department\\Views/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->add()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:33:45 --> Undefined variable $adventure_name
+in APPPATH\Modules\Department\Views\index.php on line 44.
+ 1 APPPATH\Modules\Department\Views\index.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $adventure_name', 'APPPATH\\Modules\\Department\\Views\\index.php', 44)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Modules\\Department\\Views\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Department\\Views\\index', [], true)
+ 5 APPPATH\Modules\Department\Controllers\AdminController.php(50): view('\\Modules\\Department\\Views\\index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-08-12 16:43:12 --> Table 'dummy.tbl_settings' doesn't exist
+CRITICAL - 2022-08-12 16:43:12 --> Table 'dummy.tbl_settings' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_settings`
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_settings`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_settings`
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_settings`
+ORDER BY `id` DESC', [], false)
+ 5 APPPATH\Models\Common.php(150): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\Common.php(362): App\Models\Common->GetTableRows('tbl_settings', 'C:\\xampp\\htdocs\\dummyproject')
+ 7 APPPATH\Modules\Settings\Controllers\AdminController.php(28): App\Models\Common->get_setting_data()
+ 8 SYSTEMPATH\CodeIgniter.php(896): Modules\Settings\Controllers\AdminController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Settings\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 16:48:43 --> Invalid file: front/index.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/index.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('front/index', [], true)
+ 3 APPPATH\Controllers\Home.php(27): view('front/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 17:02:26 --> Undefined property: CodeIgniter\View\View::$request
+in APPPATH\Modules\Department\Views\index.php on line 28.
+ 1 APPPATH\Modules\Department\Views\index.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$request', 'APPPATH\\Modules\\Department\\Views\\index.php', 28)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Modules\\Department\\Views\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Department\\Views\\index', [], true)
+ 5 APPPATH\Modules\Department\Controllers\AdminController.php(50): view('\\Modules\\Department\\Views\\index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 17:03:57 --> syntax error, unexpected token ":"
+in APPPATH\Modules\Department\Views\index.php on line 28.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Department\\Views\\index', [], true)
+ 3 APPPATH\Modules\Department\Controllers\AdminController.php(50): view('\\Modules\\Department\\Views\\index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-08-12 17:04:15 --> Unclosed '{' on line 20
+in APPPATH\Modules\Department\Views\index.php on line 320.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Department\\Views\\index', [], true)
+ 3 APPPATH\Modules\Department\Controllers\AdminController.php(50): view('\\Modules\\Department\\Views\\index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-08-12 17:05:28 --> Table 'dummy.tbl_roles' doesn't exist
+CRITICAL - 2022-08-12 17:05:28 --> Table 'dummy.tbl_roles' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = \'1\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = \'1\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = \'1\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = :id:
+ LIMIT 1', [...], false)
+ 5 APPPATH\Models\Common.php(161): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Helpers\common_helper.php(40): App\Models\Common->GetSingleValue('tbl_roles', 'permissions', [...])
+ 7 APPPATH\Views\admin\layout\master.php(281): all_permissions()
+ 8 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\layout\\master.php')
+ 9 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('admin/layout/master', [], true)
+11 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Department\\Views\\index', [], true)
+12 APPPATH\Modules\Department\Controllers\AdminController.php(50): view('\\Modules\\Department\\Views\\index', [...])
+13 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+14 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+15 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-08-12 17:05:28 --> Table 'dummy.tbl_roles' doesn't exist
+CRITICAL - 2022-08-12 17:05:28 --> Table 'dummy.tbl_roles' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = \'1\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = \'1\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = \'1\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = :id:
+ LIMIT 1', [...], false)
+ 5 APPPATH\Models\Common.php(161): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Helpers\common_helper.php(40): App\Models\Common->GetSingleValue('tbl_roles', 'permissions', [...])
+ 7 APPPATH\Views\admin\layout\master.php(281): all_permissions()
+ 8 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\layout\\master.php')
+ 9 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('admin/layout/master', [], true)
+11 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Department\\Views\\index', [], true)
+12 APPPATH\Modules\Department\Controllers\AdminController.php(50): view('\\Modules\\Department\\Views\\index', [...])
+13 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+14 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+15 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-08-12 17:06:00 --> Table 'dummy.tbl_roles' doesn't exist
+CRITICAL - 2022-08-12 17:06:00 --> Table 'dummy.tbl_roles' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = \'1\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = \'1\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = \'1\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = :id:
+ LIMIT 1', [...], false)
+ 5 APPPATH\Models\Common.php(161): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Helpers\common_helper.php(40): App\Models\Common->GetSingleValue('tbl_roles', 'permissions', [...])
+ 7 APPPATH\Views\admin\layout\master.php(281): all_permissions()
+ 8 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\layout\\master.php')
+ 9 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('admin/layout/master', [], true)
+11 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Department\\Views\\index', [], true)
+12 APPPATH\Modules\Department\Controllers\AdminController.php(50): view('\\Modules\\Department\\Views\\index', [...])
+13 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+14 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+15 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-08-12 17:06:02 --> Table 'dummy.tbl_roles' doesn't exist
+CRITICAL - 2022-08-12 17:06:02 --> Table 'dummy.tbl_roles' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = \'1\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = \'1\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = \'1\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `permissions`
+FROM `tbl_roles`
+WHERE `id` = :id:
+ LIMIT 1', [...], false)
+ 5 APPPATH\Models\Common.php(161): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Helpers\common_helper.php(40): App\Models\Common->GetSingleValue('tbl_roles', 'permissions', [...])
+ 7 APPPATH\Views\admin\layout\master.php(281): all_permissions()
+ 8 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\layout\\master.php')
+ 9 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('admin/layout/master', [], true)
+11 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('\\Modules\\Department\\Views\\index', [], true)
+12 APPPATH\Modules\Department\Controllers\AdminController.php(50): view('\\Modules\\Department\\Views\\index', [...])
+13 SYSTEMPATH\CodeIgniter.php(896): Modules\Department\Controllers\AdminController->index()
+14 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Department\Controllers\AdminController))
+15 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-08-12 17:09:04 --> Table 'dummy.tbl_orders' doesn't exist
+CRITICAL - 2022-08-12 17:09:04 --> Table 'dummy.tbl_orders' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_orders`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `tbl_orders`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `tbl_orders`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_orders`', [], false)
+ 5 APPPATH\Models\Common.php(297): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Modules\Dashboard\Controllers\AdminController.php(30): App\Models\Common->GetTotalCount('tbl_orders', 'C:\\xampp\\htdocs\\dummyproject')
+ 7 SYSTEMPATH\CodeIgniter.php(896): Modules\Dashboard\Controllers\AdminController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-08-12 17:09:16 --> Table 'dummy.tbl_orders' doesn't exist
+CRITICAL - 2022-08-12 17:09:16 --> Table 'dummy.tbl_orders' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_orders`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `tbl_orders`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `tbl_orders`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_orders`', [], false)
+ 5 APPPATH\Models\Common.php(297): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Modules\Dashboard\Controllers\AdminController.php(30): App\Models\Common->GetTotalCount('tbl_orders', 'C:\\xampp\\htdocs\\dummyproject')
+ 7 SYSTEMPATH\CodeIgniter.php(896): Modules\Dashboard\Controllers\AdminController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
