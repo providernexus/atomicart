@@ -202,7 +202,7 @@
 						<div class="col-md-4">
 							<div class="form-group">
 								<label for="exampleSelectGender">Sub Department</label>
-								<select class="form-control select2" value="" name="sub_department" id="sub_department">
+								<select class="form-control select2" value="" name="sub_department" id="challenge_id">
 									<option value="">Select</option>
 									<?= $sub_department?>
 								</select>
