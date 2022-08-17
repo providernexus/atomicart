@@ -94,8 +94,8 @@ class AdminController extends BaseController
     		$director = $this->request->getPost('director',FILTER_UNSAFE_RAW);
     		$studio = $this->request->getPost('studio',FILTER_UNSAFE_RAW);
     		$description = $this->request->getPost('description',FILTER_UNSAFE_RAW);
-			$video_url = $this->request->getPost(['video_url']);
-    	//	$image = $this->request->getPost('image',FILTER_SANITIZE_NUMBER_INT);
+			$video_url = $this->request->getPost('video_url');
+			$thumbnail = $this->request->getPost('thumbnail');
 			
     		$rules = [ 
     			'title' => ['label' => 'Title', 'rules' => 'trim|required'],
@@ -112,12 +112,14 @@ class AdminController extends BaseController
     				'director' => $director,
     				'studio' => $studio,
     				'description' => $description,
+    				'thumbnail' => $thumbnail,
     				'image' => $image,
-					'video_url' => serialize($video_url),
+					'video_url' => $video_url,
 					'created_at' => time(),
 					'updated_at' => time(),
     			];
-			
+				
+				
     			$insert_id = $this->common_model->InsertTableData(TABLE_PROJECT,$data);
     			if($insert_id){
     				$this->session->setFlashdata('flash_message',lang('t.data-successfully-added'));
@@ -158,7 +160,7 @@ class AdminController extends BaseController
 						'original_name' => $file_name,
 						'used' => 1,
 					);
-				$insert_id = $this->common_model->InsertTableData(TABLE_PROJECT,$data);
+				$insert_id = $this->common_model->InsertTableData(MEDIA_TABLE,$data);
 				$ids[] = $insert_id;
 			}
 		}
@@ -194,7 +196,7 @@ class AdminController extends BaseController
 		$studio = $this->request->getPost('studio',FILTER_UNSAFE_RAW);
 		$description = $this->request->getPost('description',FILTER_UNSAFE_RAW);
 		$image = $this->request->getPost('image',FILTER_SANITIZE_NUMBER_INT);
-
+		$video_url = $this->request->getPost('video_url');
 	   $rules = [ 
 			'title' => ['label' => 'Title', 'rules' => 'trim|required'],
 			'director' => ['label' => 'Director', 'rules' => 'trim|required'],
@@ -209,6 +211,7 @@ class AdminController extends BaseController
 			'studio' => $studio,
 			'description' => $description,
 			'image' => $image,
+			'video_url' => $video_url,
 			'created_at' => time(),
 			'updated_at' => time(),
 			
@@ -232,11 +235,11 @@ class AdminController extends BaseController
 		$page_data["errors"] = $this->validator->getErrors();
 	}
 	endif;
-/* 	$adventure_id = $this->common_model->SelectDropdown(ADVENTURES_TABLE,'name','id', array($page_data['adventure_id']),array('name !=' => ''));
+//	$adventure_id = $this->common_model->SelectDropdown(ADVENTURES_TABLE,'name','id', array($page_data['adventure_id']),array('name !=' => ''));
 	$media_img = $this->common_model->GetTableRows(MEDIA_TABLE);
 
 	$page_data['media_img'] = $media_img;
-	$page_data['adventure_id'] = $adventure_id; */
+//	$page_data['adventure_id'] = $adventure_id; 
 	$page_data['module'] = "Manage Project: Edit";
 	$page_data['mr'] = $this->mr;
 	$page_data['model'] = $this->common_model;
@@ -246,10 +249,9 @@ class AdminController extends BaseController
 	//Delete user
     public function delete()
     {
-    	if(!have_permission('delete_challenges')){ return redirect()->to('admin/dashboard'); }
     	if($this->request->isAJAX()){
     		if(!empty($this->request->getPost('id'))):
-    			$id = $this->request->getPost('id',FILTER_SANITIZE_STRING);
+    			$id = $this->request->getPost('id',FILTER_SANITIZE_NUMBER_INT);
 
     			$row = $this->common_model->GetSingleRow($this->default_table,array('id' => $id));
 

@@ -230,27 +230,27 @@
 						<div class="col-lg-12">
 							<div class="row">
 								<div class="col-lg-12">
-									<h5 class="card-title">Image</h5>
+									<h5 class="card-title">Thumbnail</h5>
 								</div>
-								<div class="col-md-12 user_avatar choose_file questions" title="Image" section_class="section_image">
+								<div class="col-md-12 user_avatar choose_file" title="thumbnail" section_class="section_image">
 									<div class="form-group">
 										<span class="input-group-append">
-											<button class="btn btn-primary" id="choose_file" data-toggle="modal" data-target="#exampleModalScrollablequestions" type="button"><?php echo lang('Text.storyline.table.label.choose_image') ?></button>
+											<button class="btn btn-primary" id="choose_file" type="button">Choose Image</button>
 										</span>
 										<label class="img_modal img_show"></label>
 									</div>
 								</div>
 
-								<!-- for selected image show -->
+						 <!--   for selected image show  -->
 								<div class="col-md-12 adventures_gallery_box section_image" style="padding: 0px 15px; display:block;">
 									<div class="row adventures_gallery_images">
 										<?php
-										if (isset($_POST['image']) && !empty($_POST['image'])) :
-											$image_name = $model->GetSingleValue(MEDIA_TABLE, 'name', array('id' => $_POST['image']));
-											$path = FCPATH . '/uploads/' . $image_name;
+										if (isset($_POST['thumbnail']) && !empty($_POST['thumbnail'])) :
+											$thumbnail_name = $model->GetSingleValue(MEDIA_TABLE, 'name', array('id' => $_POST['thumbnail']));
+											$path = FCPATH . '/uploads/' . $thumbnail_name;
 											if (file_exists($path)) : ?>
 												<div class="col-lg-2 image_section" style="padding:5px 15px;">
-													<div class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="image" value="<?= $_POST['image'] ?>"><img src="<?= base_url('/uploads/' . $image_name) ?>"></label></div>
+													<div class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="thumbnail" value="<?= $_POST['thumbnail'] ?>"><img src="<?= base_url('/uploads/' . $thumbnail_name) ?>"></label></div>
 												</div>
 										<?php
 											endif;
@@ -260,55 +260,52 @@
 									<hr>
 								</div>
 							</div>
-						</div>
+						</div>  
 						<div class="col-lg-12">
-								<div class="row">
-									<div class="col-lg-12">
-										<h5 class="card-title task-tittle">Video</h5>
+							<div class="row">
+								<div class="col-lg-12">
+									<h5 class="card-title task-tittle">Video</h5>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="name">Video Url</label>
+										<input type="text" class="form-control "  name="video_url" value="<?php echo set_value('video_url') ?>" id="video_url" autocomplete="off" />
+										<?php if(!empty($errors['video_url'])): ?>
+											<p class="error"><?= $errors['video_url']?></p>
+										<?php endif;?>
 									</div>
-									<?php
-										$x = 1;
-										while($x <= 1){
-									?>
-									<div class="col-md-4">
+								</div>
+								<div class="col-lg-4">
+									<div class="col-md-12 user_avatar choose_file questions" title="Image" section_class="section_image">
 										<div class="form-group">
-											<label for="name"><?php echo lang('Text.challenges.table.label.video_url') ?></label>
-											<input type="text" class="form-control" name="questions[<?=$x?>][video_url]" value="<?php echo set_value('video_url['.$x.'][video_url]') ?>" id="title" autocomplete="off" multiple />
-											<?php if(!empty($errors['video_url'])): ?>
-												<p class="error"><?= $errors['video_url']?></p>
-											<?php endif;?>
-										</div>
-									</div>
-									<div class="col-md-4 user_avatar questions" section_class="section_id_<?php echo $x?>"  title="Challenges" section_id="<?php echo $x?>">
-										<div class="form-group">
-											<label><?php echo lang('Text.challenges.table.label.image') ?></label>
-											<span class="input-group-append choose_img">
-												<button class="btn btn-primary " id="questions"  data-toggle="modal" section_class="section_id_<?php echo $x?>" data-target="#exampleModalScrollablequestions"  type="button"><?php echo lang('Text.challenges.table.label.choose_image') ?></button>
+											<label>Image</label>
+											<span class="input-group-append">
+												<button class="btn btn-primary" id="choose_file" data-toggle="modal" data-target="#exampleModalScrollablequestions" type="button">Choose Image</button>
 											</span>
+											<label class="img_modal img_show"></label>
 										</div>
 									</div>
-									<div class="col-md-12 adventures_gallery_box section_id_<?php echo $x?>" style="padding: 0px 15px; display:block;">
-										 <div class="row adventures_gallery_images">
-											 <?php
-												  if(isset($_POST['video_url'][$x]['image_ids']) && !empty($_POST['video_url'][$x]['image_ids'])):
-													foreach($_POST['video_url'][$x]['image_ids'] as $key => $value):
-														$image_name = $model->GetSingleValue(MEDIA_TABLE, 'name', array('id' => $value));
-														$path = FCPATH.'/uploads/'.$image_name;
-														if(file_exists($path)): ?>
-														 <div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="questions[<?php echo $x?>][image_ids][]" value="<?=$value?>"><img src="<?=base_url('/uploads/'.$image_name);?>"></label></div></div>
-														 <?php
-														endif;
-													endforeach;
+
+									<!-- for selected image show -->
+									<div class="col-md-12 adventures_gallery_box section_image" style="padding: 0px 15px; display:block;">
+										<div class="row adventures_gallery_images">
+											<?php
+											if (isset($_POST['image']) && !empty($_POST['image'])) :
+												$image_name = $model->GetSingleValue(MEDIA_TABLE, 'name', array('id' => $_POST['image']));
+												$path = FCPATH . '/uploads/' . $image_name;
+												if (file_exists($path)) : ?>
+													<div class="col-lg-2 image_section" style="padding:5px 15px;">
+														<div class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="image" value="<?= $_POST['image'] ?>"><img src="<?= base_url('/uploads/' . $image_name) ?>"></label></div>
+													</div>
+											<?php
 												endif;
+											endif;
 											?>
-										  </div>   
+										</div>
 									</div>
-									<?php 
-										$x++;
-										}	
-									?>
 								</div>
 							</div>
+						</div>
 					</div>
 					<div class="row">
 						<div class="col-lg-6">
