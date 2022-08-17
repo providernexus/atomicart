@@ -109,6 +109,15 @@ $routes->group("admin", ["filter" => "adminAuthGuard"], function ($routes) {
 		$routes->add('clone/(:num)', '\Modules\Departmentfiles\Controllers\AdminController::clone/$1');
 	});
 	
+		//for Events
+	$routes->group('event', function ($routes) {
+		$routes->add('/', '\Modules\Event\Controllers\AdminController::index');
+		$routes->add('add', '\Modules\Event\Controllers\AdminController::add');
+		$routes->add('edit/(:num)', '\Modules\Event\Controllers\AdminController::edit/$1');
+		$routes->add('delete', '\Modules\Event\Controllers\AdminController::delete');
+		$routes->add('change_status', '\Modules\Event\Controllers\AdminController::changeStatus');
+	});
+	
 	$routes->group('profile', function ($routes) {
 		$routes->add('/', '\Modules\Profile\Controllers\AdminController::index');
 	});
