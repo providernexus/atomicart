@@ -301,6 +301,25 @@
                                 </ul>
                             </div>
                         </li>
+						
+						<li class="nav-item  <?php if ($route[0] == "admin/departmentfiles" || $route[0] == "admin/departmentfiles/add" || $route[0] == "admin/departmentfiles/edit/([0-9]+)") echo "active"; ?>">
+                            <a class="nav-link" data-toggle="collapse" href="#ui-storyline" aria-expanded="false" aria-controls="ui-storyline">
+                                <i class="mdi mdi-book-open-page-variant" aria-hidden="true"></i>
+                                <span class="menu-title">Department Files</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse <?php if ($route[0] == "admin/departmentfiles" || $route[0] == "admin/departmentfiles/add" || $route[0] == "admin/departmentfiles/edit/([0-9]+)") echo "show"; ?>" id="ui-storyline">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item <?php if ($route[0] == "admin/departmentfiles") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/departmentfiles') ?>">All Department Files</a></li>
+                                    <?php if (in_array('add_challenges',$permissions)) : ?>
+                                        <li class="nav-item <?php if ($route[0] == "admin/departmentfiles/add") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/departmentfiles/add') ?>">Add New</a></li>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                        </li>
+						
+						
+						
 						<li class="nav-item  <?php if ($route[0] == "admin/project" || $route[0] == "admin/project/add" || $route[0] == "admin/project/edit/([0-9]+)") echo "active"; ?>">
 							<a class="nav-link" data-toggle="collapse" href="#ui-project" aria-expanded="false" aria-controls="ui-project">
 								<i class="mdi mdi-bike" aria-hidden="true"></i>
