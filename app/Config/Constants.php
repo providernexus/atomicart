@@ -104,6 +104,7 @@ define('DEPARTMENT_TABLE','tbl_department');
 define('INQUIRY_TABLE','tbl_inquiry');
 define('TRANSLATIONS_TABLE','tbl_translations');
 define('TABLE_PROJECT','tbl_project');
+define('TABLE_EVENTS','tbl_events');
 
 //Admin email
 define('ADMIN_EMAIL','provider.nexus@gmail.com');

@@ -191,55 +191,52 @@
 					<?php endif ?>
 					<?php echo form_open_multipart('', array('class' => 'forms-sample'), array('s' => 'ok')); ?>
 					<div class="row">
-					   <div class="col-md-4">
+					    <div class="col-md-4">
 							<div class="form-group">
-								<label for="title">Title<span class="favor_in_span">*</span></label>
-								<input type="text" class="form-control "  name="title" value="<?php echo set_value('title') ?>" id="title" autocomplete="off" />
-								<?php if(!empty($errors['title'])): ?>
-									<p class="error"><?= $errors['title']?></p>
-								<?php endif;?>
+								<label for="name">Title<span class="favor_in_span">*</span></label>
+								<input type="text" class="form-control " id="title" name="title" value="" /><?php echo set_value('title') ?></input>
+								<?php if (!empty($errors['title'])) : ?>
+									<p class="error"><?= $errors['title'] ?></p>
+								<?php endif; ?>
+							</div>
+						</div>
+                       <div class="col-md-4">
+							<div class="form-group">
+								<label>Start Date</label><br />
+								<input class="form-control" type="text" name="start_date" id="datepicker" value="<?php echo set_value('start_date') ?>" />
+								<i class="mdi mdi-calendar" id="show-date-picker"></i>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
-								<label for="director">Director<span class="favor_in_span">*</span></label>
-								<input type="text" class="form-control "  name="director" value="<?php echo set_value('director') ?>" id="director" autocomplete="off" />
-								<?php if(!empty($errors['director'])): ?>
-									<p class="error"><?= $errors['director']?></p>
-								<?php endif;?>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="form-group">
-								<label for="studio">Studio<span class="favor_in_span">*</span></label>
-								<input type="text" class="form-control "  name="studio" value="<?php echo set_value('studio') ?>" id="studio" autocomplete="off" />
-								<?php if(!empty($errors['studio'])): ?>
-									<p class="error"><?= $errors['studio']?></p>
-								<?php endif;?>
+								<label>End Date</label><br />
+								<input class="form-control" type="text" name="end_date" id="datepicker" value="<?php echo set_value('end_date') ?>" />
+								<i class="mdi mdi-calendar" id="show-date-picker"></i>
 							</div>
 						</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<label for="name">Description</label>
-								<textarea type="text" rows="4" cols="50" class="form-control editor"  id="description" name="description" value="" id="description" autocomplete="off" /><?php echo set_value('description') ?></textarea>
-								<?php if(!empty($errors['description'])): ?>
-									<p class="error"><?= $errors['description']?></p>
-								<?php endif;?>
+								 <label for="name">Description<span class="favor_in_span">*</span></label> 
+								<textarea type="text" rows="4" cols="50" class="form-control editor" id="description" name="description" value="" id="description" autocomplete="off" /><?php echo set_value('description') ?></textarea>
+								<?php if (!empty($errors['description'])) : ?>
+									<p class="error"><?= $errors['description'] ?></p>
+								<?php endif; ?>
 							</div>
 						</div>
 						<div class="col-lg-12">
 							<div class="row">
 								<div class="col-lg-12">
-									<h5 class="card-title">Thumbnail</h5>
+									<h5 class="card-title">Image</h5>
 								</div>
 								<div class="col-md-12 user_avatar choose_file questions" title="Image" section_class="section_image">
 									<div class="form-group">
 										<span class="input-group-append">
-											<button class="btn btn-primary" id="choose_file" data-toggle="modal" data-target="#exampleModalScrollablequestions" type="button">Choose Image</button>
+											<button class="btn btn-primary" id="choose_file" data-toggle="modal" data-target="#exampleModalScrollablequestions" type="button"><?php echo lang('Text.storyline.table.label.choose_image') ?></button>
 										</span>
 										<label class="img_modal img_show"></label>
 									</div>
 								</div>
+
 								<!-- for selected image show -->
 								<div class="col-md-12 adventures_gallery_box section_image" style="padding: 0px 15px; display:block;">
 									<div class="row adventures_gallery_images">
@@ -257,50 +254,6 @@
 										?>
 									</div>
 									<hr>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="row">
-								<div class="col-lg-12">
-									<h5 class="card-title task-tittle">Video</h5>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label for="name">Video Url</label>
-										<input type="text" class="form-control "  name="video_url" value="<?php echo set_value('video_url') ?>" id="video_url" autocomplete="off" />
-										<?php if(!empty($errors['video_url'])): ?>
-											<p class="error"><?= $errors['video_url']?></p>
-										<?php endif;?>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="col-md-12 user_avatar choose_file questions" title="Image" section_class="section_image">
-										<div class="form-group">
-											<label>Image</label>
-											<span class="input-group-append">
-												<button class="btn btn-primary" id="choose_file" data-toggle="modal" data-target="#exampleModalScrollablequestions" type="button">Choose Image</button>
-											</span>
-											<label class="img_modal img_show"></label>
-										</div>
-									</div>
-									<!-- for selected image show -->
-									<div class="col-md-12 adventures_gallery_box section_image" style="padding: 0px 15px; display:block;">
-										<div class="row adventures_gallery_images">
-											<?php
-											if (isset($_POST['image']) && !empty($_POST['image'])) :
-												$image_name = $model->GetSingleValue(MEDIA_TABLE, 'name', array('id' => $_POST['image']));
-												$path = FCPATH . '/uploads/' . $image_name;
-												if (file_exists($path)) : ?>
-													<div class="col-lg-2 image_section" style="padding:5px 15px;">
-														<div class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="image" value="<?= $_POST['image'] ?>"><img src="<?= base_url('/uploads/' . $image_name) ?>"></label></div>
-													</div>
-											<?php
-												endif;
-											endif;
-											?>
-										</div>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -339,6 +292,13 @@
 <script src="<?php echo base_url('assets/admin/js/file-upload.js') ?>"></script>
 
 <script>
+
+//datepicker
+$(document).ready(function () {
+    $("#start_date").datepicker();
+    $("#end_date").datepicker();
+});
+
 	//on changing select tag of adventure 
 	$(document).on("change", "#adventure_id", function(e) {
 		var adventure_id = $(this).val();
@@ -683,5 +643,27 @@
 	//		alert($(this).val());
 	//		let adventure_class = $(this).attr('section_class');
 	//	})
+	
+	
+	$( function() {
+		var current_year = new Date().getFullYear();
+		$( "#datepicker" ).datepicker({
+			dateFormat : 'dd-mm-yy',
+			changeMonth: true,
+			changeYear: true,
+			yearRange: "1930:"+(current_year-10),
+
+		});
+	});
+	
+	$(document).on('click','button[type="submit"]',function(){
+		var self = $(this);
+		BtnLoading(self);
+		self.parents('form').submit();
+	})
+	$(document).on('click','#show-date-picker',function(){
+
+		$('#datepicker').datepicker('show')
+	});
 </script>
 <?= $this->endSection() ?>

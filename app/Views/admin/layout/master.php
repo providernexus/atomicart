@@ -314,6 +314,19 @@
 								</ul>
 							</div>
 						</li>
+						<li class="nav-item  <?php if ($route[0] == "admin/event" || $route[0] == "admin/event/add" || $route[0] == "admin/event/edit/([0-9]+)") echo "active"; ?>">
+							<a class="nav-link" data-toggle="collapse" href="#ui-event" aria-expanded="false" aria-controls="ui-event">
+								<i class="mdi mdi-bike" aria-hidden="true"></i>
+								<span class="menu-title">Event</span>
+								<i class="menu-arrow"></i>
+							</a>
+							<div class="collapse <?php if ($route[0] == "admin/event" || $route[0] == "admin/event/add" || $route[0] == "admin/event/edit/([0-9]+)") echo "show"; ?>" id="ui-event">
+								<ul class="nav flex-column sub-menu">
+									<li class="nav-item <?php if ($route[0] == "admin/event") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/event') ?>">All Event</a></li>
+									<li class="nav-item <?php if ($route[0] == "admin/event/add") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/event/add') ?>">Add New</a></li>
+								</ul>
+							</div>
+						</li>
                 </ul>
             </nav>
             <!-- partial -->
