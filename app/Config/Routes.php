@@ -79,6 +79,14 @@ $routes->group("admin", ["filter" => "adminAuthGuard"], function ($routes) {
 		$routes->add('clone/(:num)', '\Modules\Department\Controllers\AdminController::clone/$1');
 	});
 
+		//for Project
+	$routes->group('project', function ($routes) {
+		$routes->add('/', '\Modules\Project\Controllers\AdminController::index');
+		$routes->add('add', '\Modules\Project\Controllers\AdminController::add');
+		$routes->add('edit/(:num)', '\Modules\Project\Controllers\AdminController::edit/$1');
+		$routes->add('delete', '\Modules\Project\Controllers\AdminController::delete');
+		$routes->add('change_status', '\Modules\Project\Controllers\AdminController::changeStatus');
+	});
 	
 	
 	$routes->group('profile', function ($routes) {
