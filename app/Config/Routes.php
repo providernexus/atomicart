@@ -78,16 +78,36 @@ $routes->group("admin", ["filter" => "adminAuthGuard"], function ($routes) {
 		$routes->add('get-challenges', '\Modules\Department\Controllers\AdminController::getChallenges');
 		$routes->add('clone/(:num)', '\Modules\Department\Controllers\AdminController::clone/$1');
 	});
-
-		//for Project
-	$routes->group('project', function ($routes) {
-		$routes->add('/', '\Modules\Project\Controllers\AdminController::index');
-		$routes->add('add', '\Modules\Project\Controllers\AdminController::add');
-		$routes->add('edit/(:num)', '\Modules\Project\Controllers\AdminController::edit/$1');
-		$routes->add('delete', '\Modules\Project\Controllers\AdminController::delete');
-		$routes->add('change_status', '\Modules\Project\Controllers\AdminController::changeStatus');
-	});
 	
+	//for Departmentfiles
+	$routes->group('departmentfiles', function ($routes) {
+		$routes->add('/', '\Modules\Departmentfiles\Controllers\AdminController::index');
+		$routes->add('add', '\Modules\Departmentfiles\Controllers\AdminController::add');
+		$routes->add('edit/(:num)', '\Modules\Departmentfiles\Controllers\AdminController::edit/$1');
+		$routes->add('delete', '\Modules\Departmentfiles\Controllers\AdminController::delete');
+		$routes->add('fileUpload', '\Modules\Departmentfiles\Controllers\AdminController::fileUpload');
+		$routes->add("img-upload", '\Modules\Departmentfiles\Controllers\AdminController::imgUpload');
+		$routes->add('remove_image', '\Modules\Departmentfiles\Controllers\AdminController::removeImage');
+		$routes->add('change_status', '\Modules\Departmentfiles\Controllers\AdminController::changeStatus');
+		$routes->add('delete_image/(:num)', '\Modules\Departmentfiles\Controllers\AdminController::delete_image/$1');
+		$routes->add('get-subdepartment', '\Modules\Departmentfiles\Controllers\AdminController::getSubDepartment');
+		$routes->add('clone/(:num)', '\Modules\Departmentfiles\Controllers\AdminController::clone/$1');
+	});
+
+	//for Departmentfiles
+	$routes->group('departmentfiles', function ($routes) {
+		$routes->add('/', '\Modules\Departmentfiles\Controllers\AdminController::index');
+		$routes->add('add', '\Modules\Departmentfiles\Controllers\AdminController::add');
+		$routes->add('edit/(:num)', '\Modules\Departmentfiles\Controllers\AdminController::edit/$1');
+		$routes->add('delete', '\Modules\Departmentfiles\Controllers\AdminController::delete');
+		$routes->add('fileUpload', '\Modules\Departmentfiles\Controllers\AdminController::fileUpload');
+		$routes->add("img-upload", '\Modules\Departmentfiles\Controllers\AdminController::imgUpload');
+		$routes->add('remove_image', '\Modules\Departmentfiles\Controllers\AdminController::removeImage');
+		$routes->add('change_status', '\Modules\Departmentfiles\Controllers\AdminController::changeStatus');
+		$routes->add('delete_image/(:num)', '\Modules\Departmentfiles\Controllers\AdminController::delete_image/$1');
+		$routes->add('get-subdepartment', '\Modules\Departmentfiles\Controllers\AdminController::getSubDepartment');
+		$routes->add('clone/(:num)', '\Modules\Departmentfiles\Controllers\AdminController::clone/$1');
+	});
 	
 	$routes->group('profile', function ($routes) {
 		$routes->add('/', '\Modules\Profile\Controllers\AdminController::index');
