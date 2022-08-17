@@ -153,6 +153,27 @@ function email_confirm_class($selected, $sap = " ")
 		return $sap . $array[$selected];
 	}
 }
+
+function type_department($selected = '')
+{
+	$array = [
+		'1' => 'WorkFlow',
+		'2' => 'Tutorials',
+		'3' => 'Reference',
+		'4' => 'AAP Module',
+	];
+	
+	if ($selected != "") {
+		if (isset($array[$selected])) :
+			return $array[$selected];
+		else :
+			return '';
+		endif;
+	} else {
+		return $array;
+	}
+}
+
 function payment_statuses($selected = '')
 {
 	$array = [
