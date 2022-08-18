@@ -198,17 +198,17 @@
 									<?php endif;?>
 								</div>
 							</div>
-						   <div class="col-md-4">
+							<div class="col-md-4">
 								<div class="form-group">
-									<label>Start Date</label><br />
-									<input class="form-control" type="text" name="start_date" id="start_date" value="<?php echo $start_date ?>" />
+									<label for="start_date">Start Date</label><br />
+									<input class="form-control" type="text" name="start_date" id="start_date" value="<?php echo date('m-d-Y',$start_date) ?>" autocomplete="off" />
 									<i class="mdi mdi-calendar" id="show-date-picker"></i>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<label>End Date</label><br />
-									<input class="form-control" type="text" name="end_date" id="end_date" value="<?php echo $end_date ?>" />
+									<label for="end_date">End Date</label><br />
+									<input class="form-control" type="text" name="end_date" id="end_date" value="<?php echo date('m-d-Y',$end_date) ?>" autocomplete="off" />
 									<i class="mdi mdi-calendar" id="show-date-picker"></i>
 								</div>
 							</div>
@@ -286,6 +286,11 @@
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <script src="<?php echo base_url('assets/admin/js/file-upload.js') ?>"></script>
 <script>
+//datepicker
+$(document).ready(function () {
+    $("#start_date").datepicker();
+    $("#end_date").datepicker();
+});
 //on changing select tag of adventure 
 	  $(document).on("change","#adventure_id",function(e){
 		  var adventure_id = $(this).val();
@@ -443,10 +448,10 @@ $(document).on('click','.on_checked_image',function(e){
 					 $('.'+section_class+' .adventures_gallery_images').html('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="'+key+'" value="'+checked_value+'"><img src="'+image+'"></label></div></div>');
 					 }
 				 }else{
-					 let value = parseInt($('.attachment_ids').last().val());
+					 let value = parseInt($('.attachment_ids').val());
 					 if(value > 0){
 					 let image_url = '<?php echo base_url('uploads');?>/';
-					 let image = image_url+$('.attachment_ids').last().attr('src'); 
+					 let image = image_url+$('.attachment_ids').attr('src'); 
 					 let fillename = getFileExtension(image);
 					 const array = ["jpeg","jpg","png","gif"];
 					 const isInArray = array.includes(fillename);
@@ -520,6 +525,8 @@ $(document).on('click','.show_media_images',function(e){
 	
 $( function() {
 	var current_year = new Date().getFullYear();
+/* 	var startDate;
+	var endDate; */
 	$( "#datepicker" ).datepicker({
 		dateFormat : 'dd-mm-yy',
 		changeMonth: true,
@@ -529,6 +536,15 @@ $( function() {
 	});
 });
 	
+/* 	$('#start_date').change(function(){
+		startDate=$(this).datepicker('getDate');
+		$('#end_date').datepicker('option','minDate','startDate')
+	});
+	
+	$('#end_date').change(function(){
+		endDate=$(this).datepicker('getDate');
+		$('#start_date').datepicker('option','maxDate','endDate')
+	}) */
 	$(document).on('click','button[type="submit"]',function(){
 		var self = $(this);
 		BtnLoading(self);

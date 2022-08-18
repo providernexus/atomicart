@@ -647,6 +647,8 @@ $(document).ready(function () {
 	
 	$( function() {
 		var current_year = new Date().getFullYear();
+		/* var startDate;
+		var endDate; */
 		$( "#datepicker" ).datepicker({
 			dateFormat : 'dd-mm-yy',
 			changeMonth: true,
@@ -656,6 +658,15 @@ $(document).ready(function () {
 		});
 	});
 	
+/* 	$('#start_date').change(function(){
+		startDate=$(this).datepicker('getDate');
+		$('#end_date').datepicker('option','minDate','startDate')
+	});
+	
+	$('#end_date').change(function(){
+		endDate=$(this).datepicker('getDate');
+		$('#start_date').datepicker('option','maxDate','endDate')
+	}) */
 	$(document).on('click','button[type="submit"]',function(){
 		var self = $(this);
 		BtnLoading(self);
