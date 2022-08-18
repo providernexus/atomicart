@@ -282,7 +282,7 @@
                             </a>
                             <div class="collapse <?php if ($route[0] == "admin/department" || $route[0] == "admin/department/add" || $route[0] == "admin/department/edit/([0-9]+)") echo "show"; ?>" id="ui-storyline">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item <?php if ($route[0] == "admin/department") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/department') ?>">All Department</a></li>
+                                    <li class="nav-item <?php if ($route[0] == "admin/department") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/department') ?>">All Departments</a></li>
                                     <?//php if (in_array('add_challenges',$permissions)) : ?>
                                         <li class="nav-item <?php if ($route[0] == "admin/department/add") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/department/add') ?>">Add New</a></li>
                                     <?//php endif; ?>
@@ -323,25 +323,25 @@
 						<li class="nav-item  <?php if ($route[0] == "admin/project" || $route[0] == "admin/project/add" || $route[0] == "admin/project/edit/([0-9]+)") echo "active"; ?>">
 							<a class="nav-link" data-toggle="collapse" href="#ui-project" aria-expanded="false" aria-controls="ui-project">
 								<i class="mdi mdi-bike" aria-hidden="true"></i>
-								<span class="menu-title">Project</span>
+								<span class="menu-title">Projects</span>
 								<i class="menu-arrow"></i>
 							</a>
 							<div class="collapse <?php if ($route[0] == "admin/porject" || $route[0] == "admin/project/add" || $route[0] == "admin/project/edit/([0-9]+)") echo "show"; ?>" id="ui-project">
 								<ul class="nav flex-column sub-menu">
-									<li class="nav-item <?php if ($route[0] == "admin/project") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/project') ?>">All Project</a></li>
+									<li class="nav-item <?php if ($route[0] == "admin/project") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/project') ?>">All Projects</a></li>
 									<li class="nav-item <?php if ($route[0] == "admin/project/add") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/project/add') ?>">Add New</a></li>
 								</ul>
 							</div>
 						</li>
 						<li class="nav-item  <?php if ($route[0] == "admin/event" || $route[0] == "admin/event/add" || $route[0] == "admin/event/edit/([0-9]+)") echo "active"; ?>">
 							<a class="nav-link" data-toggle="collapse" href="#ui-event" aria-expanded="false" aria-controls="ui-event">
-								<i class="mdi mdi-bike" aria-hidden="true"></i>
-								<span class="menu-title">Event</span>
+								<i class="mdi mdi-calendar-text" aria-hidden="true"></i>
+								<span class="menu-title">Events</span>
 								<i class="menu-arrow"></i>
 							</a>
 							<div class="collapse <?php if ($route[0] == "admin/event" || $route[0] == "admin/event/add" || $route[0] == "admin/event/edit/([0-9]+)") echo "show"; ?>" id="ui-event">
 								<ul class="nav flex-column sub-menu">
-									<li class="nav-item <?php if ($route[0] == "admin/event") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/event') ?>">All Event</a></li>
+									<li class="nav-item <?php if ($route[0] == "admin/event") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/event') ?>">All Events</a></li>
 									<li class="nav-item <?php if ($route[0] == "admin/event/add") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/event/add') ?>">Add New</a></li>
 								</ul>
 							</div>
