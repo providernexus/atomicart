@@ -201,14 +201,14 @@
 						   <div class="col-md-4">
 								<div class="form-group">
 									<label>Start Date</label><br />
-									<input class="form-control" type="text" name="start_date" id="datepicker" value="<?php echo $start_date ?>" />
+									<input class="form-control" type="text" name="start_date" id="start_date" value="<?php echo $start_date ?>" />
 									<i class="mdi mdi-calendar" id="show-date-picker"></i>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
 									<label>End Date</label><br />
-									<input class="form-control" type="text" name="end_date" id="datepicker" value="<?php echo $end_date ?>" />
+									<input class="form-control" type="text" name="end_date" id="end_date" value="<?php echo $end_date ?>" />
 									<i class="mdi mdi-calendar" id="show-date-picker"></i>
 								</div>
 							</div>

@@ -83,7 +83,7 @@
 									<td> 
 										<a href="<?php echo base_url('admin/' . $mr . '/edit/' . $result['id']) ?>"><label class="badge badge-success"><i class="mdi mdi-eyedropper"></i> <?php echo lang('Text.common.edit') ?></label></a>
 										<a class="delete_user" href="#" data-id="<?= $result['id'] ?>" data-url="<?php echo base_url('admin/' . $mr . '/delete') ?>"><label class="badge badge-success"><i class="mdi mdi-delete"></i> <?php echo lang('Text.common.delete') ?></label></a>
-										<a class="" href="<?php echo base_url('admin/' . $mr . '/clone/' . $result['id']) ?>" data-id="<?= $result['id'] ?>" data-url=""><label class="badge badge-success"><i class="fas fa-clone"></i> Clone</label></a>
+								<!--		<a class="" href="<?//php echo base_url('admin/' . $mr . '/clone/' . $result['id']) ?>" data-id="<?//= $result['id'] ?>" data-url=""><label class="badge badge-success"><i class="fas fa-clone"></i> Clone</label></a>   -->
 									</td>
 								</tr>
 								<?php endforeach; ?>
