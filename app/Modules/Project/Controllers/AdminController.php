@@ -13,7 +13,7 @@ class AdminController extends BaseController
 		$this->module = "Manage Project";
 		$this->fp ='\Modules\Project\Views';
 		$this->default_table = TABLE_PROJECT;
-        $this->mr = "project"; // Module route
+        $this->mr = "projects"; // Module route
     }
 
     public function index()
@@ -243,7 +243,7 @@ class AdminController extends BaseController
 	$media_img = $this->common_model->GetTableRows(MEDIA_TABLE);
 	$page_data['media_img'] = $media_img;
 //	$page_data['adventure_id'] = $adventure_id; 
-	$page_data['module'] = "Manage Project: Edit";
+	$page_data['module'] = "Manage Projects: Edit";
 	$page_data['mr'] = $this->mr;
 	$page_data['model'] = $this->common_model;
 	return view($this->fp."/edit", $page_data);
