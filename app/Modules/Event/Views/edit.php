@@ -443,10 +443,10 @@ $(document).on('click','.on_checked_image',function(e){
 					 $('.'+section_class+' .adventures_gallery_images').html('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="'+key+'" value="'+checked_value+'"><img src="'+image+'"></label></div></div>');
 					 }
 				 }else{
-					 let value = parseInt($('.attachment_ids').val());
+					 let value = parseInt($('.attachment_ids').last().val());
 					 if(value > 0){
 					 let image_url = '<?php echo base_url('uploads');?>/';
-					 let image = image_url+$('.attachment_ids').attr('src'); 
+					 let image = image_url+$('.attachment_ids').last().attr('src'); 
 					 let fillename = getFileExtension(image);
 					 const array = ["jpeg","jpg","png","gif"];
 					 const isInArray = array.includes(fillename);
