@@ -110,7 +110,7 @@ $routes->group("admin", ["filter" => "adminAuthGuard"], function ($routes) {
 	});
 	
 			//for Project
-	$routes->group('project', function ($routes) {
+	$routes->group('projects', function ($routes) {
 		$routes->add('/', '\Modules\Project\Controllers\AdminController::index');
 		$routes->add('add', '\Modules\Project\Controllers\AdminController::add');
 		$routes->add('edit/(:num)', '\Modules\Project\Controllers\AdminController::edit/$1');
@@ -119,7 +119,7 @@ $routes->group("admin", ["filter" => "adminAuthGuard"], function ($routes) {
 	});
 	
 		//for Events
-	$routes->group('event', function ($routes) {
+	$routes->group('events', function ($routes) {
 		$routes->add('/', '\Modules\Event\Controllers\AdminController::index');
 		$routes->add('add', '\Modules\Event\Controllers\AdminController::add');
 		$routes->add('edit/(:num)', '\Modules\Event\Controllers\AdminController::edit/$1');

@@ -15,7 +15,7 @@ class AdminController extends BaseController
 		$this->module = "Manage Event";
 		$this->fp = '\Modules\Event\Views';
 		$this->default_table = TABLE_EVENTS;
-        $this->mr = "event"; // Module route
+        $this->mr = "events"; // Module route
     }
 
     public function index()
@@ -117,8 +117,8 @@ class AdminController extends BaseController
  
     		$description = $this->request->getPost('description',FILTER_UNSAFE_RAW);
     		$title = $this->request->getPost('title',FILTER_UNSAFE_RAW);
-			$start_date = $this->request->getPost('start_date',FILTER_SANITIZE_NUMBER_INT);
-			$end_date = $this->request->getPost('end_date',FILTER_SANITIZE_NUMBER_INT);
+			$start_date = $this->request->getPost('start_date',FILTER_SANITIZE_STRING);
+			$end_date = $this->request->getPost('end_date',FILTER_SANITIZE_STRING);
     		$rules = [ 
     			'description' => ['label' => 'Description', 'rules' => 'trim|required'],
     			'title' => ['label' => 'Title', 'rules' => 'trim|required'],
@@ -132,8 +132,8 @@ class AdminController extends BaseController
     				'title' => $title,
 					'description' => $description,
     				'image' => $image,
-    				'start_date' => $start_date,
-    				'end_date' => $end_date,
+    				'start_date' => strtotime($start_date),
+    				'end_date' => strtotime($end_date),
 					'created_at' => time(),
 					'updated_at' => time(),
 					];
@@ -216,20 +216,23 @@ class AdminController extends BaseController
 		$description = $this->request->getPost('description',FILTER_UNSAFE_RAW);
 	    $title = $this->request->getPost('title',FILTER_UNSAFE_RAW);
 		$parent_id = $this->request->getPost('parent_id',FILTER_SANITIZE_NUMBER_INT);
-
+		$start_date = $this->request->getPost('start_date',FILTER_SANITIZE_STRING);
+		$end_date = $this->request->getPost('end_date',FILTER_SANITIZE_STRING);
 		$image = $this->request->getPost('image',FILTER_UNSAFE_RAW); 
-	  
+		
 	   $rules = [ 
 			'description' => ['label' => 'Description', 'rules' => 'trim|required'],
 			'title' => ['label' => 'Title', 'rules' => 'trim|required'],
-			
-	];
+		];
+		
 	if ($this->validate($rules)) 
 	{
 		$data = array(
 			'description' => $description,
 			'title' => $title,
 			'image' => $image,
+			'start_date' => strtotime($start_date),
+			'end_date' => strtotime($end_date),
 			'updated_at' => time(),
 		);
 		
