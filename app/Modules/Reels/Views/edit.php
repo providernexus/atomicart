@@ -190,74 +190,50 @@
                         <?php echo form_open_multipart('', array('class' => 'forms-sample'), array('s' => 'ok')); ?>
                         <div class="row">
 							<div class="col-md-4">
-							<div class="form-group">
-								<label for="name">Department<span class="favor_in_span">*</span></label>
-								<select class="form-control select2" value="" name="department" id="department">
-									<option value="">Select</option>
-									<?= $department_name?>
-								</select>
-								
+								<div class="form-group">
+									<label for="name">Title<span class="favor_in_span">*</span></label>
+									<input type="text" class="form-control" name="title" value="<?php echo $title ?>" id="title" autocomplete="off" />
+									<?php if(!empty($errors['title'])): ?>
+										<p class="error"><?= $errors['title']?></p>
+									<?php endif;?>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="form-group">
-								<label for="exampleSelectGender">Sub Department</label>
-								<select class="form-control select2" value="" name="sub_department" id="challenge_id">
-									<option value="">Select</option>
-									<?= $sub_department?>
-								</select>
-							</div>
-						</div>
-						
-						<div class="col-md-4">
-							<div class="form-group">
-								<label for="exampleSelectGender">Type</label>
-								<?php $type_department = type_department(); ?>
-								<select class="form-control select2" <?=$type?> name="type" id="type">
-									<option value="">Select</option>
-								
-									<?php
-											foreach ($type_department as $key => $name_department) :
-												$selected = "";
-												if (isset($type) && $key == ($type)) :
-													$selected = "selected";
-												endif;
-												echo '<option value="' . $key . '" ' . $selected . '>' . $name_department . '</option>';
-											endforeach;
-											?>
-								</select>
-							</div>
-						</div>
-						
-							<div class="col-md-12">
-                        		<div class="form-group">
-                        			 <label for="name">Subject<span class="favor_in_span">*</span></label> 
-									 <input type="text" class="form-control " id="subject" name="subject" value="<?php echo $subject ?>" /></input>
-                        			<!--<textarea type="text" rows="4" cols="50" class="form-control editor"  id="subject" name="subject"  id="subject" autocomplete="off" /><?//php echo $subject ?></textarea>-->
-                        		</div>
+							<div class="col-md-4">
+								<div class="form-group">
+                                    <label for="exampleSelectGender">Video Url</label>
+                                    <input type="text" class="form-control" name="video_url" value="<?php echo $video_url ?>" id="video_url" autocomplete="off" />
+									<?php if(!empty($errors['video_url'])): ?>
+                        				<p class="error"><?= $errors['video_url']?></p>
+                        			<?php endif;?>
+                                </div>
                         	</div>
 							<div class="col-lg-12">
 								<div class="row">
 									<div class="col-lg-12">
-										<h5 class="card-title">Attached File</h5>
+										<h5 class="card-title">Video</h5>
 									</div>
-									<div class="col-md-12 user_avatar choose_file questions" title="Image" section_class="section_image" >
-										<div class="form-group">
-											<span class="input-group-append">
-												<button class="btn btn-primary"  id="choose_file" data-toggle="modal" data-target="#exampleModalScrollablequestions" type="button">Choose File</button>
-											</span>
-											 <label class="img_modal img_show"></label>
-										</div>
-									</div> 
+									<div class="col-md-12 user_avatar choose_file questions" title="Image" section_class="section_image">
+									<div class="form-group">
+										<span class="input-group-append">
+											<button class="btn btn-primary" id="choose_file" data-toggle="modal" data-target="#exampleModalScrollablequestions" type="button">Choose Video</button>
+										</span>
+										<label class="img_modal img_show"></label>
+									</div>
+								</div>
 									<!-- for selected image show -->
 									<div class="col-md-12 adventures_gallery_box section_image" style="padding: 0px 15px; display:block;">
 											<div class="row adventures_gallery_images">
 											  <?php
+											  
 											  if(isset($image) && !empty($image)):
 													$image_name = $model->GetSingleValue(MEDIA_TABLE, 'name', array('id' => $image));
 													$path = FCPATH.'/uploads/'.$image_name;
 													if(file_exists($path)): ?>
-													<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="image" value="<?=$image?>"><img src="<?=base_url('/uploads/'.$image_name)?>"></label></div></div>
+													<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="image" value="<?=$image?>"><video width="320" height="240" controls>
+  <source src="<?=base_url('/uploads/'.$image_name)?>" type="video/mp4">
+  <source src="<?=base_url('/uploads/'.$image_name)?>" type="video/ogg">
+  Your browser does not support the video tag.
+</video></label></div></div>
 													 <?php
 													endif;
 											endif;
@@ -302,29 +278,29 @@
 <script src="<?php echo base_url('assets/admin/js/file-upload.js') ?>"></script>
 <script>
 //on changing select tag of adventure 
-	  //on changing select tag of adventure 
-	 $(document).on("change", "#department", function(e) {
-		var department = $(this).val();
-		var self = $(this);
-		if (department != '') {
-			var data = {
-				department: department
-			}
-			$.ajax({
-				url: "<?php echo base_url('admin/' . $mr . '/get-subdepartment'); ?>",
-				type: "POST",
-				data: data,
+	  $(document).on("change","#adventure_id",function(e){
+		  var adventure_id = $(this).val();
+		  var self = $(this);
+		  if(adventure_id!='')
+		  {
+			  var data ={adventure_id: adventure_id}
+			  $.ajax({
+				url:"<?php echo base_url('admin/'.$mr.'/get-challenges');?>",
+				type:"POST",
+				data:data,
 				dataType: "json",
 				enctype: "multipart/form-data",
-			}).done(function(resp) {
-				if (resp.status == "success") {
-					$("#challenge_id").html(resp.html);
-				} else {
-					$("#challenge_id").html(resp.html);
-				}
-			});
-		}
-	}); 
+				}).done(function (resp){
+					if(resp.status=="success")
+					{
+						$("#challenge_id").html(resp.html);
+					}
+					else{
+						$("#challenge_id").html(resp.html);
+					}
+				});
+		  }
+	  });
 $('.select2').select2();
 
 	$(document).on('change', 'select', function(e) {
@@ -452,7 +428,7 @@ $(document).on('click','.on_checked_image',function(e){
 				 if(checked == true){
 					 let image = $('.img_check:checked').next('img').attr('src');
 					 let fillename = getFileExtension(image);
-					 const array = ["jpeg","jpg","png","gif"];
+					 const array = ["mp4", "3gp"];
 					 const isInArray = array.includes(fillename);
 					 if(isInArray == true){
 					 $('.'+section_class+' .adventures_gallery_images').html('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="'+key+'" value="'+checked_value+'"><img src="'+image+'"></label></div></div>');
@@ -463,10 +439,10 @@ $(document).on('click','.on_checked_image',function(e){
 					 let image_url = '<?php echo base_url('uploads');?>/';
 					 let image = image_url+$('.attachment_ids').attr('src'); 
 					 let fillename = getFileExtension(image);
-					 const array = ["jpeg","jpg","png","gif"];
+					 const array = ["mp4", "3gp"];
 					 const isInArray = array.includes(fillename);
 					 if(isInArray == true){
-					 $('.'+section_class+' .adventures_gallery_images').html('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="'+key+'" value="'+value+'"><img src="'+image+'"></label></div></div>');
+					 $('.' + section_class + ' .adventures_gallery_images').html('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="' + key + '" value="' + value + '"><video width="320" height="240" controls><source src="movie.mp4" type="video/mp4"><source src="' + image + '" type="video/ogg"></video src="' + image + '"></label></div></div>');
 					   }
 					 }
 				 }
@@ -476,7 +452,7 @@ $(document).on('click','.on_checked_image',function(e){
 						var id = $(this).val();
 						let image = $(this).next('img').attr('src');
 						let fillename = getFileExtension(image);
-						 const array = ["jpeg","jpg","png","gif"];
+						 const array = ["mp4", "3gp"];
 						 const isInArray = array.includes(fillename);
 						 if(isInArray == true){
 						   $('.'+section_class+' .adventures_gallery_images').prepend('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="questions['+section_id+'][image_ids][]" value="'+id+'"><img src="'+image+'"></label></div></div>');
@@ -488,7 +464,7 @@ $(document).on('click','.on_checked_image',function(e){
 						let image_url = '<?php echo base_url('uploads');?>/';
 						let image = image_url+$(this).attr('src');
 						let fillename = getFileExtension(image);
-						const array = ["jpeg","jpg","png","gif"];
+						const array = ["mp4", "3gp"];
 						const isInArray = array.includes(fillename);
 						if(isInArray == true){
 						  $('.'+section_class+' .adventures_gallery_images').prepend('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="questions['+section_id+'][image_ids][]" value="'+id+'"><img src="'+image+'"></label></div></div>');

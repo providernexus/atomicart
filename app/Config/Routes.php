@@ -118,6 +118,21 @@ $routes->group("admin", ["filter" => "adminAuthGuard"], function ($routes) {
 		$routes->add('change_status', '\Modules\Event\Controllers\AdminController::changeStatus');
 	});
 	
+	//for Reels
+	$routes->group('reels', function ($routes) {
+		$routes->add('/', '\Modules\Reels\Controllers\AdminController::index');
+		$routes->add('add', '\Modules\Reels\Controllers\AdminController::add');
+		$routes->add('edit/(:num)', '\Modules\Reels\Controllers\AdminController::edit/$1');
+		$routes->add('delete', '\Modules\Reels\Controllers\AdminController::delete');
+		$routes->add('fileUpload', '\Modules\Reels\Controllers\AdminController::fileUpload');
+		$routes->add("img-upload", '\Modules\Reels\Controllers\AdminController::imgUpload');
+		$routes->add('remove_image', '\Modules\Reels\Controllers\AdminController::removeImage');
+		$routes->add('change_status', '\Modules\Reels\Controllers\AdminController::changeStatus');
+		$routes->add('delete_image/(:num)', '\Modules\Reels\Controllers\AdminController::delete_image/$1');
+		$routes->add('get-subdepartment', '\Modules\Reels\Controllers\AdminController::getSubDepartment');
+		$routes->add('clone/(:num)', '\Modules\Reels\Controllers\AdminController::clone/$1');
+	});
+	
 	$routes->group('profile', function ($routes) {
 		$routes->add('/', '\Modules\Profile\Controllers\AdminController::index');
 	});

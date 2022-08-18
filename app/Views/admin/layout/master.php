@@ -333,6 +333,23 @@
 								</ul>
 							</div>
 						</li>
+						
+						<li class="nav-item  <?php if ($route[0] == "admin/reels" || $route[0] == "admin/reels/add" || $route[0] == "admin/reels/edit/([0-9]+)") echo "active"; ?>">
+                            <a class="nav-link" data-toggle="collapse" href="#ui-reels" aria-expanded="false" aria-controls="ui-reels">
+                                <i class="mdi mdi-bike" aria-hidden="true"></i>
+                                <span class="menu-title">Reels</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse <?php if ($route[0] == "admin/reels" || $route[0] == "admin/reels/add" || $route[0] == "admin/reels/edit/([0-9]+)") echo "show"; ?>" id="ui-reels">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item <?php if ($route[0] == "admin/reels") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/reels') ?>">All Reels</a></li>
+                                    <?php if (in_array('add_challenges',$permissions)) : ?>
+                                        <li class="nav-item <?php if ($route[0] == "admin/reels/add") echo "active"; ?>"><a class="nav-link" href="<?php echo base_url('admin/reels/add') ?>">Add New</a></li>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                        </li>
+						
 						<li class="nav-item  <?php if ($route[0] == "admin/event" || $route[0] == "admin/event/add" || $route[0] == "admin/event/edit/([0-9]+)") echo "active"; ?>">
 							<a class="nav-link" data-toggle="collapse" href="#ui-event" aria-expanded="false" aria-controls="ui-event">
 								<i class="mdi mdi-bike" aria-hidden="true"></i>

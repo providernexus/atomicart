@@ -193,64 +193,31 @@
 					<div class="row">
 					    <div class="col-md-4">
 							<div class="form-group">
-								<label for="name">Department<span class="favor_in_span">*</span></label>
-								<select class="form-control select2" value="" name="department" id="department">
-									<option value="">Select</option>
-									<?= $parent_id ?>
-								</select>
-								<?php if (!empty($errors['department'])) : ?>
-									<p class="error"><?= $errors['department'] ?></p>
+								<label for="name">Title<span class="favor_in_span">*</span></label>
+								<input type="text" class="form-control " id="title" name="title" value="" /><?php echo set_value('title') ?></input>
+								<?php if (!empty($errors['title'])) : ?>
+									<p class="error"><?= $errors['title'] ?></p>
 								<?php endif; ?>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
-								<label for="exampleSelectGender">Sub Department</label>
-								<select class="form-control select2" value="" name="sub_department" id="challenge_id">
-									<option value="<?php echo set_value('sub_department') ?>">Select</option>
-									<?= $parent_id?>
-								</select>
-							</div>
-						</div>
-						
-						<div class="col-md-4">
-							<div class="form-group">
-								<label for="exampleSelectGender">Type</label>
-								<?php $type_department = type_department(); ?>
-								<select class="form-control select2" value="" name="type" id="type">
-									<option value="">Select</option>
-									<?php
-											foreach ($type_department as $key => $name_department) :
-												$selected = "";
-												if (isset($_GET['add']) && $key == $_GET['add']) :
-													$selected = "selected";
-												endif;
-												echo '<option value="' . $key . '" ' . $selected . '>' . $name_department . '</option>';
-											endforeach;
-											?>
-								</select>
-							</div>
-						</div>
-						
-						<div class="col-md-12">
-							<div class="form-group">
-								 <label for="name">Subject<span class="favor_in_span">*</span></label> 
-								 <input type="text" class="form-control " id="subject" name="subject" value="" /><?php echo set_value('subject') ?></input>
-								<!--<textarea type="text" rows="4" cols="50" class="form-control editor" id="subject" name="subject" value="" id="subject" autocomplete="off" /><?//php echo set_value('subject') ?></textarea>-->
-								<?php if (!empty($errors['subject'])) : ?>
-									<p class="error"><?= $errors['subject'] ?></p>
+								<label for="exampleSelectGender">Video Url</label>
+								<input type="text" class="form-control " id="video_url" name="video_url" value="" /><?php echo set_value('video_url') ?></input>
+								<?php if (!empty($errors['parent_id'])) : ?>
+									<p class="error"><?= $errors['parent_id'] ?></p>
 								<?php endif; ?>
 							</div>
 						</div>
 						<div class="col-lg-12">
 							<div class="row">
 								<div class="col-lg-12">
-									<h5 class="card-title">Attached File</h5>
+									<h5 class="card-title">Video</h5>
 								</div>
 								<div class="col-md-12 user_avatar choose_file questions" title="Image" section_class="section_image">
 									<div class="form-group">
 										<span class="input-group-append">
-											<button class="btn btn-primary" id="choose_file" data-toggle="modal" data-target="#exampleModalScrollablequestions" type="button">Choose File</button>
+											<button class="btn btn-primary" id="choose_file" data-toggle="modal" data-target="#exampleModalScrollablequestions" type="button">Choose Video</button>
 										</span>
 										<label class="img_modal img_show"></label>
 									</div>
@@ -281,12 +248,12 @@
 						<div class="col-lg-6">
 							<a href="<?php echo base_url('admin/' . $mr) ?>">
 								<button type="button" class="btn btn-primary btn-icon-text btn-sm">
-									<i class="mdi mdi-arrow-left" style="font-size: 11px;"></i><span>Back</span>
+									<i class="mdi mdi-arrow-left" style="font-size: 11px;"></i><span><?php echo lang('Text.common.back') ?></span>
 								</button>
 							</a>
 						</div>
 						<div class="col-md-6 text-right">
-							<button type="submit" class="btn btn-primary mr-2">Submit</button>
+							<button type="submit" class="btn btn-primary mr-2"><?php echo lang('Text.common.submit') ?></button>
 						</div>
 					</div>
 					</form>
@@ -312,15 +279,15 @@
 
 <script>
 	//on changing select tag of adventure 
-	 $(document).on("change", "#department", function(e) {
-		var department = $(this).val();
+	$(document).on("change", "#adventure_id", function(e) {
+		var adventure_id = $(this).val();
 		var self = $(this);
-		if (department != '') {
+		if (adventure_id != '') {
 			var data = {
-				department: department
+				adventure_id: adventure_id
 			}
 			$.ajax({
-				url: "<?php echo base_url('admin/' . $mr . '/get-subdepartment'); ?>",
+				url: "<?php echo base_url('admin/' . $mr . '/get-challenges'); ?>",
 				type: "POST",
 				data: data,
 				dataType: "json",
@@ -333,7 +300,7 @@
 				}
 			});
 		}
-	}); 
+	});
 	$('.select2').select2();
 	Dropzone.autoDiscover = false;
 	$("#myId").dropzone({
@@ -415,22 +382,7 @@
 
 	});
 
-	/* $(document).on('click','.img_click',function(e){
-		e.preventDefault();
-		var display= $('.modal-dialog').css('display');	
-		 $('.close').click();	
-		if(display =='block')
-		{
-			//true cond
-			$('.modal-dialog').css('display','none');
-		}
-		else
-		{
-			//false cond
-			//$('.choose_file').css('display','block');
-		}
-	})
-	 */
+	
 	//hints model
 	$(document).on('click', '.add_hints_img', function(e) {
 		e.preventDefault();
@@ -571,7 +523,7 @@
 			if (checked == true) {
 				let image = $('.img_check:checked').next('img').attr('src');
 				let fillename = getFileExtension(image);
-				const array = ["jpeg", "jpg", "png", "gif"];
+				const array = ["mp4", "3gp"];
 				const isInArray = array.includes(fillename);
 				if (isInArray == true) {
 					$('.' + section_class + ' .adventures_gallery_images').html('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="' + key + '" value="' + checked_value + '"><img src="' + image + '"></label></div></div>');
@@ -582,10 +534,10 @@
 					let image_url = '<?php echo base_url('uploads'); ?>/';
 					let image = image_url + $('.attachment_ids').attr('src');
 					let fillename = getFileExtension(image);
-					const array = ["jpeg", "jpg", "png", "gif"];
+					const array = ["mp4", "3gp"];
 					const isInArray = array.includes(fillename);
 					if (isInArray == true) {
-						$('.' + section_class + ' .adventures_gallery_images').html('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="' + key + '" value="' + value + '"><img src="' + image + '"></label></div></div>');
+						$('.' + section_class + ' .adventures_gallery_images').html('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="' + key + '" value="' + value + '"><video width="320" height="240" controls><source src="movie.mp4" type="video/mp4"> <source src="' + image + '" type="video/ogg">Your browser does not support the video tag.</video src="' + image + '"></label></div></div>');
 					}
 				}
 			}
@@ -594,7 +546,7 @@
 				var id = $(this).val();
 				let image = $(this).next('img').attr('src');
 				let fillename = getFileExtension(image);
-				const array = ["jpeg", "jpg", "png", "gif"];
+				const array = ["mp4", "3gp"];
 				const isInArray = array.includes(fillename);
 				if (isInArray == true) {
 					$('.' + section_class + ' .adventures_gallery_images').prepend('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="questions[' + section_id + '][image_ids][]" value="' + id + '"><img src="' + image + '"></label></div></div>');
@@ -606,7 +558,7 @@
 				let image_url = '<?php echo base_url('uploads'); ?>/';
 				let image = image_url + $(this).attr('src');
 				let fillename = getFileExtension(image);
-				const array = ["jpeg", "jpg", "png", "gif"];
+				const array = ["mp4", "3gp"];
 				const isInArray = array.includes(fillename);
 				if (isInArray == true) {
 					$('.' + section_class + ' .adventures_gallery_images').prepend('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="questions[' + section_id + '][image_ids][]" value="' + id + '"><img src="' + image + '"></label></div></div>');
