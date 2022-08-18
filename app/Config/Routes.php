@@ -116,6 +116,7 @@ $routes->group("admin", ["filter" => "adminAuthGuard"], function ($routes) {
 		$routes->add('edit/(:num)', '\Modules\Project\Controllers\AdminController::edit/$1');
 		$routes->add('delete', '\Modules\Project\Controllers\AdminController::delete');
 		$routes->add('change_status', '\Modules\Project\Controllers\AdminController::changeStatus');
+			$routes->add('fileUpload', '\Modules\Project\Controllers\AdminController::fileUpload');
 	});
 	
 		//for Events

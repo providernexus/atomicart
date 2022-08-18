@@ -155,7 +155,6 @@ class AdminController extends BaseController
     	endif;
 	//	$parent_id = $this->common_model->SelectDropdown($this->default_table,'title','id', array($this->request->getVar('parent_id')),array('status' => 1));
 		$media_img = $this->common_model->GetTableRows(MEDIA_TABLE);
-		
 		$page_data['media_img'] = $media_img;
    // 	$page_data['parent_id'] = $parent_id;
     	$page_data['module'] = 'Manage Events: Add';

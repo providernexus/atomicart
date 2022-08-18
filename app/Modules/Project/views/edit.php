@@ -215,11 +215,11 @@
 									<div class="col-md-12 adventures_gallery_box image" style="padding: 0px 15px; display:block;">
 										<div class="row adventures_gallery_images">
 										      <?php
-											  if(isset($_POST['image']) && !empty($_POST['image'])):
-													$image_name = $model->GetSingleValue(TABLE_PROJECT, 'name', array('id' => $_POST['image']));
+											  if(isset($image) && !empty($image)):
+													$image_name = $model->GetSingleValue(MEDIA_TABLE,'name', array('id' => $image));
 													$path = FCPATH.'/uploads/'.$image_name;
 													if(file_exists($path)): ?>
-													<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="image" value="<?=$_POST['image']?>"><img src="<?=base_url('/uploads/'.$image_name)?>"></label></div></div>
+													<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="image" value="<?=$image?>"><img src="<?=base_url('/uploads/'.$image_name)?>"></label></div></div>
 													 <?php
 													endif;
 											    endif;
@@ -229,6 +229,58 @@
 									</div>
 								</div>
 							</div>
+							<div class="col-lg-12">
+							<div class="row">
+								<div class="col-lg-12">
+									<h5 class="card-title task-tittle">Video</h5>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="name">Video Url</label>
+										<input type="text" class="form-control "  name="video_url" value="<?php echo $video_url ?>" id="video_url" autocomplete="off" />
+										<?php if(!empty($errors['video_url'])): ?>
+											<p class="error"><?= $errors['video_url']?></p>
+										<?php endif;?>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="col-md-12 user_avatar choose_file questions" title="Image" section_class="section_file">
+										<div class="form-group">
+											<label>File</label>
+											<span class="input-group-append">
+												<button class="btn btn-primary" id="choose_file" data-toggle="modal" data-target="#exampleModalScrollablequestions" type="button">Choose File</button>
+											</span>
+											<label class="img_modal img_show"></label>
+										</div>
+									</div>
+									<!-- for selected image show -->
+									<div class="col-md-12 adventures_gallery_box section_file" style="padding: 0px 15px; display:block;">
+										<div class="row adventures_gallery_images">
+											<?php
+											if (isset($file) && !empty($file)) :
+												$image_name = $model->GetSingleValue(MEDIA_TABLE, 'name', array('id' => $file));
+												$original_name = $model->GetSingleValue(MEDIA_TABLE, 'original_name', array('id' => $file));
+												$ext = pathinfo($image_name, PATHINFO_EXTENSION);
+												$image_extention = ["jpeg","jpg","png","gif"];
+												$path = FCPATH . '/uploads/' . $image_name;
+												if (file_exists($path)) : 
+												     if(in_array($ext, $image_extention)):?>
+													<div class="col-lg-2 image_section" title="<?=$image_name?>"  style="padding:5px 15px;">
+														<div class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="file" value="<?=$file?>"><img src="<?= base_url('/uploads/' . $image_name) ?>"></label></div>
+													</div>
+											<?php  else:  ?>
+											         <div class="col-lg-2 image_section" title="<?=$original_name?>" style="padding:5px 15px;">
+														<div class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="file" value="<?=$file?>"><img src="https://via.placeholder.com/150/?Text=<?=$original_name?>/Ohttps://placeholder.com/"></label><p class="original_name"><?=$original_name?></p></div>
+													</div>
+											<?php	endif;
+											     endif;
+											endif;
+											?>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
                         </div> 
                         <div class="row">
                         	<div class="col-lg-6">
@@ -509,7 +561,7 @@ $(document).on('click','.on_checked_image',function(e){
 	    let checked_value = $(this).find("input").prop("checked");
 		let section_class = $("#section_id").attr('section_class');
 		//for single image select 
-		if(section_class == 'section_hints' || section_class == 'image'){
+		if(section_class == 'section_file' || section_class == 'image'){
 			if(checked_value == false){
 				$(".img_check").prop('checked', false);
 				$(this).find(".img_check").removeAttr('checked');
@@ -546,7 +598,7 @@ $(document).on('click','.on_checked_image',function(e){
 	      let section_class  = $("#section_id").attr('section_class');
 	      let section_id  = $("#section_id").val();
 		  	//for single image select 
-		     if(section_class == 'section_hints' || section_class == 'image' || section_class == 'section_hints_2'){
+		     if(section_class == 'section_file' || section_class == 'image'){
 				 let checked_value = $('.img_check:checked').val();
 				 let checked = $('.img_check:checked').prop("checked");
 				 let key = "";
@@ -554,30 +606,59 @@ $(document).on('click','.on_checked_image',function(e){
 				 if(section_class == 'image'){
 					key = "image";
 				 }
-				 if(section_class == 'section_hints'){
-					key = "hints[image_id][0]";
+				 if(section_class == 'section_file'){
+					key = "file";
 				 }
 				 if(section_class == 'section_hints_2'){
 					key = "hints[image_id][1]";
 				 }
 				 if(checked == true){
 					 let image = $('.img_check:checked').next('img').attr('src');
+					 let original_name = $('.img_check:checked').next('img').attr('original_name');
 					 let fillename = getFileExtension(image);
 					 const array = ["jpeg","jpg","png","gif"];
 					 const isInArray = array.includes(fillename);
+					//for image file valid
+					 if(section_class == 'image'){
+						 if(isInArray == false){
+							swal("Only jpg/jpeg and png files are allowed!", {
+								icon: "warning",
+							}); 
+							return false;
+						 }
+					 }
 					 if(isInArray == true){
 					 $('.'+section_class+' .adventures_gallery_images').html('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="'+key+'" value="'+checked_value+'"><img src="'+image+'"></label></div></div>');
 					 }
+					 else{
+						  $('.'+section_class+' .adventures_gallery_images').html('<div class="col-lg-2 image_section" title="'+original_name+'" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="'+key+'" value="'+checked_value+'"><img src="https://via.placeholder.com/150/?Text='+original_name+'/Ohttps://placeholder.com/"></label></div></div>');
+						  
+					  }
 				 }else{
-					 let value = parseInt($('.attachment_ids').val());
+					 let value = parseInt($('.attachment_ids').last().val());
 					 if(value > 0){
 					 let image_url = '<?php echo base_url('uploads');?>/';
-					 let image = image_url+$('.attachment_ids').attr('src'); 
+					 let image = image_url+$('.attachment_ids').last().attr('src'); 
+					 let original_name = $('.attachment_ids').last().attr('src'); 
 					 let fillename = getFileExtension(image);
 					 const array = ["jpeg","jpg","png","gif"];
 					 const isInArray = array.includes(fillename);
-					 if(isInArray == true){
-					 $('.'+section_class+' .adventures_gallery_images').html('<div class="col-lg-2 image_section" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="'+key+'" value="'+value+'"><img src="'+image+'"></label></div></div>');
+					 const videoarray = ["mp4","3gp"];
+					 const videoisInArray = videoarray.includes(fillename);
+					 //for image file valid
+					 if(section_class == 'image'){
+						 if(isInArray == false){
+							swal("Only jpg/jpeg and png files are allowed!", {
+								icon: "warning",
+							}); 
+							return false;
+						 }
+					 }
+                    if(isInArray == true){
+					     $('.'+section_class+' .adventures_gallery_images').html('<div class="col-lg-2 image_section" title="'+original_name+'" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="'+key+'" value="'+value+'"><img src="'+image+'"></label></div></div>');
+					  }else{
+						  $('.'+section_class+' .adventures_gallery_images').html('<div class="col-lg-2 image_section" title="'+original_name+'" style="padding:5px 15px;"><div  class="radio_img"><label><span class="cross_icon_add"><i class="fa fa-times" aria-hidden="true"></i></span><input type="radio" name="test" value="big"><input type="hidden" class="image_ids" name="'+key+'" value="'+value+'"><img src="https://via.placeholder.com/150/?Text='+original_name+'/Ohttps://placeholder.com/"></label></div></div>');
+						  
 					  }
 					 }
 				 }

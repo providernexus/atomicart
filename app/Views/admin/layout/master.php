@@ -391,13 +391,13 @@
 			<?php 
 			   if(isset($media_img) && !empty($media_img)):
 				 foreach($media_img as $img):
-					$image_id = $model->GetSingleValue(MEDIA_TABLE, 'name', array('id' => $img['id']));
+					//$image_id = $model->GetSingleValue(MEDIA_TABLE, 'name', array('id' => $img['id']));
 					$path = FCPATH.'/uploads/'.$img['name'];
 					if(file_exists($path)):  ?>
 						<label class="hints_img_modal img_slt on_checked_image">
 							<div class="img-container">
 							  <input type="checkbox" class="img_check" name="img_check" id="myCheckbox1" value="<?=$img['id']?>"   style="display:none;"/>
-							  <img imgs="<?=$img['id']?>" src="<?php echo base_url('uploads/'.$img['name'])?>">
+							  <img imgs="<?=$img['id']?>" original_name="<?=$img['name']?>" src="<?php echo base_url('uploads/'.$img['name'])?>">
 							</div>
 						</label> <?php 
 		           endif;
