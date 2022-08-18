@@ -95,7 +95,7 @@ class AdminController extends BaseController
     		$studio = $this->request->getPost('studio',FILTER_UNSAFE_RAW);
     		$description = $this->request->getPost('description',FILTER_UNSAFE_RAW);
 			$video_url = $this->request->getPost('video_url');
-			$thumbnail = $this->request->getPost('thumbnail');
+			$file = $this->request->getPost('file');
 			
     		$rules = [ 
     			'title' => ['label' => 'Title', 'rules' => 'trim|required'],
@@ -112,7 +112,7 @@ class AdminController extends BaseController
     				'director' => $director,
     				'studio' => $studio,
     				'description' => $description,
-    				'thumbnail' => $thumbnail,
+    				'file' => $file,
     				'image' => $image,
 					'video_url' => $video_url,
 					'created_at' => time(),
@@ -136,6 +136,8 @@ class AdminController extends BaseController
     		endif;
 
     	endif;
+		$media_img = $this->common_model->GetTableRows(MEDIA_TABLE);
+		$page_data['media_img'] = $media_img;
 		$page_data['module'] = 'Manage Project: Add';
     	$page_data['mr'] = $this->mr;
 		$page_data['model'] = $this->common_model;
@@ -196,6 +198,7 @@ class AdminController extends BaseController
 		$studio = $this->request->getPost('studio',FILTER_UNSAFE_RAW);
 		$description = $this->request->getPost('description',FILTER_UNSAFE_RAW);
 		$image = $this->request->getPost('image',FILTER_SANITIZE_NUMBER_INT);
+		$file = $this->request->getPost('file',FILTER_SANITIZE_NUMBER_INT);
 		$video_url = $this->request->getPost('video_url');
 	   $rules = [ 
 			'title' => ['label' => 'Title', 'rules' => 'trim|required'],
@@ -211,6 +214,7 @@ class AdminController extends BaseController
 			'studio' => $studio,
 			'description' => $description,
 			'image' => $image,
+			'file' => $file,
 			'video_url' => $video_url,
 			'created_at' => time(),
 			'updated_at' => time(),
@@ -237,7 +241,6 @@ class AdminController extends BaseController
 	endif;
 //	$adventure_id = $this->common_model->SelectDropdown(ADVENTURES_TABLE,'name','id', array($page_data['adventure_id']),array('name !=' => ''));
 	$media_img = $this->common_model->GetTableRows(MEDIA_TABLE);
-
 	$page_data['media_img'] = $media_img;
 //	$page_data['adventure_id'] = $adventure_id; 
 	$page_data['module'] = "Manage Project: Edit";
